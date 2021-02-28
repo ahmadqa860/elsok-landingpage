@@ -3,8 +3,6 @@ import { Switch, Route, Router } from "react-router-dom";
 import { ProtectedRoute } from "./protectedRoute";
 import { createBrowserHistory } from "history";
 
-
-
 import AddUser from './components/user/add-user';
 import AddNewProduct from "./components/seller/add-product";
 import ThankYouPage from "./components/thankYou";
@@ -29,6 +27,7 @@ class App extends Component {
         <MiddleSection />
         <Service />
         <CategoryList />
+        
         <Switch>
         <Router history={history}>
           <Route path="/" exact component={SubmitData} />
@@ -43,6 +42,7 @@ class App extends Component {
           />
         </Router>
         </Switch>
+        
         <Footer/>
       </React.Fragment>
     );
