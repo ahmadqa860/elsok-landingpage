@@ -1,16 +1,16 @@
 import React,{Component} from 'react';
 import Signup from './user/signup';
+import "./css/SForm.css";
+import "./js/script";
 
 class SubmitData extends Component{
 
     render(){
         return(
-            <section id="signup">
-                <div className="mt-10">
-                    <Signup />
-                </div>
-            </section>
-           
+            <React.Fragment>  
+            
+            <Signup />
+        </React.Fragment>
         );
     }
 }

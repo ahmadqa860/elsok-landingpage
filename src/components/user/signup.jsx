@@ -6,27 +6,40 @@ import userService from "../../services/userService";
 
 
 import Form from "../common/form";
+import PageHeader from "../utils/pageHeader";
 
 class Signup extends Form {
   state = {
-    data: { email: "", password: "" },
+    data: { email: "", password: "", password_confirmation: "" },
     errors: {},
   };
 
   schema = {
-    email: Joi.string().required().email().label("Email"),
-    password: Joi.string().required().min(6).label("Password"),
+    email: Joi.string().required().email().label("Email").error(() => {
+      return {
+        message: 'خطأ',
+      };
+    }),
+    password: Joi.string().required().min(6).label("Password").error(() => {
+      return {
+        message: 'خطأ',
+      };
+    }),
     password_confirmation: Joi.string()
       .required()
-      .min(2)
-      .label("confirm password"),
+      .min(6)
+      .label("confirm password").error(() => {
+        return {
+          message: 'خطأ',
+        };
+      }),
   };
 
   doSubmit = async () => {
     const { data } = this.state;
     
     try {
-      //await userService.register(data);
+      await userService.register(data);
       window.location = "/add-user#addUser";
      
     } catch (ex) {
@@ -45,18 +58,13 @@ class Signup extends Form {
 
   render() {
     return (
-      <div className="container" id="formData">
-        <div className="row">
-          <div className="col-12 mt-4">
-            <h1>Signup for Real App</h1> 
-          </div>
-          <div className="col-12">
-            <p>You can open new account for free!</p>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <form onSubmit={this.handleSubmit} autoComplete="off" method="POST">
+      
+      <section id="signup">
+        
+      <div className="wrapper rounded">
+          <div className="Lcontainer">
+          <PageHeader titleText="Welcome To Our Card Web App" />
+            <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST">
               {this.renderInput("email", "عنوان البريد الالكتروني:", "email")}
               {this.renderInput("password", "ادخل كلمة المرور:", "password")}
               {this.renderInput(
@@ -66,9 +74,22 @@ class Signup extends Form {
               )}
               {this.renderButton("تسجيل")}
             </form>
-          </div>
-        </div>
-      </div>
+            <ul className="bg-bubbles">
+                                  <li></li>
+                                  <li></li>
+                                  <li></li>
+                                  <li></li>
+                                  <li></li>
+                                  <li></li>
+                                  <li></li>
+                                  <li></li>
+                                  <li></li>
+                                  <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
     );
   }
 }

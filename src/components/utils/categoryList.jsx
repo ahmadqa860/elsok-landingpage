@@ -1,9 +1,10 @@
 import React from "react";
 import img1 from "../../img/portfolio/thumbnails/1.jpg";
 
+
 const CategoryList = () => {
   return (
-    <div id="portfolio">
+    <div id="portfolio" >
             <div className="container-fluid p-0">
                 <div className="row no-gutters">
                     <div className="col-lg-4 col-sm-6">

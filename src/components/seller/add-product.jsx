@@ -4,6 +4,7 @@ import Joi from "joi-browser";
 import http from "../../services/httpService";
 import {apiUrl} from "../../config.json";
 
+import PageHeader from "../utils/pageHeader";
 
 
 class AddNewProduct extends Form{
@@ -26,11 +27,31 @@ class AddNewProduct extends Form{
     }
 
     schema={
-        categorie_id: Joi.required().label("Category"),
-        product_title: Joi.string().required().label("Title"),
-        product_description: Joi.string().required().label("Description"),
-        product_price: Joi.string().required().label("Price"),
-        uploadImage:Joi.required().label("uploadImage"), 
+        categorie_id: Joi.required().label("Category").error(() => {
+            return {
+              message: 'خطأ',
+            };
+          }),
+        product_title: Joi.string().required().label("Title").error(() => {
+            return {
+              message: 'خطأ',
+            };
+          }),
+        product_description: Joi.string().required().label("Description").error(() => {
+            return {
+              message: 'خطأ',
+            };
+          }),
+        product_price: Joi.string().required().label("Price").error(() => {
+            return {
+              message: 'خطأ',
+            };
+          }),
+        uploadImage:Joi.required().label("uploadImage").error(() => {
+            return {
+              message: 'خطأ',
+            };
+          }), 
     };
 
     handleSelect = (event) => {
@@ -56,8 +77,8 @@ class AddNewProduct extends Form{
         bodyFormData.forEach(elem=>console.log(elem));    
         console.log(bodyFormData);
         //console.log(data.uploadImage);
-        //await http.post(`${apiUrl}/seller-products`,bodyFormData);
-        this.props.history.replace("/thank-you");
+        await http.post(`${apiUrl}/seller-products`,bodyFormData);
+        //this.props.history.replace("/thank-you");
        
     }
 
@@ -72,71 +93,47 @@ class AddNewProduct extends Form{
         const {categories} = this.state;
 
         return (
-            <React.Fragment>
-       
-        <section className="my-account-area section_padding_100_50">
-            <div className="container">
-                <div className="row">
-                   
-                    <div className="col-12 col-lg-9">
-                        <div className="my-account-content mb-50">
-                            <h5 className="mb-3">Account Details</h5>
-                            <form onSubmit={this.handleSubmit} autoComplete="off" method="POST" encType="multipart/form-data">
-                                <div className="row">
-                                    <div className="col-12">
-                                        <div className="form-group">
-                                            <select
-                                                name="categorie_id"
-                                                id="categorie_id"
-                                                className="custom-select"
-                                                onChange={this.handleSelect}
-                                                >
-                                                <option defaultValue="">أختار التصنيف</option> 
-                                                {categories.map((category)=>(
-                                                      <option key={category.id} value={category.id}>{category.categorie_title}</option> 
-                                                    ))} 
-                                                
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="form-group">
-                                            {this.renderInput("product_title", "عنوان المنتج")}
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="form-group">
-                                        {this.renderInput("product_description", "شرح وتفصيل عن المنتج")}
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="form-group">
-                                        {this.renderInput("product_price", "السعر")}
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="form-group">
-                                            <input  name="file" type="file" onChange={this.handleFileSelected} multiple/>
-                                        </div>
-                                    </div> 
-                                     
-                                    
-                                    <div className="col-12">
-                                         {this.renderButton("أنتهاء")} 
-                                        
-                                    </div>
-                                </div>
-                            </form>
+            <section >
+                <div className="wrapper rounded">
+                    <div className="Lcontainer">
+                        <PageHeader titleText="Welcome To Our Card Web App" />
+                        <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST" encType="multipart/form-data">
+                            <select
+                                name="categorie_id"
+                                id="categorie_id"
+                                className="custom-select"
+                                onChange={this.handleSelect}
+                                
+                                >
+                                <option defaultValue="">أختار التصنيف</option> 
+                                    {categories.map((category)=>(
+                                        <option key={category.id} value={category.id}>{category.categorie_title}</option> 
+                                    ))} 
+                            </select>
                             
-                        </div>
-                    </div>
+                            {this.renderInput("product_title", "عنوان المنتج")}
+                            {this.renderInput("product_description", "شرح وتفصيل عن المنتج")}
+                            {this.renderInput("product_price", "السعر")}
+                            <input  name="file" type="file" onChange={this.handleFileSelected} multiple/>
+                            {this.renderButton("أنتهاء")} 
+                        </form>
+                
+                    <ul className="bg-bubbles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </div>
             </div>
         </section>
-      </React.Fragment>
-        )
-    }
-
+    )}
 }
 
 export default AddNewProduct;
