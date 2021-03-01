@@ -1,7 +1,7 @@
 import http from "./httpService";
 import { apiUrl } from "../config.json";
 
-let tokenKey = "token";
+let tokenKey = "elsok-token";
 
 export async function login(email, password) {
   const { data } = await http.post(`${apiUrl}/login`, {
@@ -38,7 +38,7 @@ export async function registerUser(
 }
 
 export function hasToken() {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem(tokenKey);
   if (token) {
     return true;
   } else {

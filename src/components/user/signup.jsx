@@ -51,8 +51,7 @@ class Signup extends Form {
       }
       this.setState({ errors: err });
 
-      if (ex.response && ex.response.status === 400) {
-      }
+      
     }
   };
 
