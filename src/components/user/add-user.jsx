@@ -15,22 +15,22 @@ class AddUser extends Form {
   };
 
   schema = {
-    identity: Joi.string().required().label("Identity").error(() => {
+    identity: Joi.number().label("رقم الهوية").error(() => {
+      return {
+        message: 'أدخل رقم صحيح',
+      };
+    }),
+    name: Joi.string().required().label("الاسم").error(() => {
       return {
         message: 'خطأ',
       };
     }),
-    name: Joi.string().required().label("Name").error(() => {
+    mobile: Joi.number().required().label("الهاتف").error(() => {
       return {
         message: 'خطأ',
       };
     }),
-    mobile: Joi.string().required().label("Mobile").error(() => {
-      return {
-        message: 'خطأ',
-      };
-    }),
-    address: Joi.string().required().label("Address").error(() => {
+    address: Joi.string().required().label("العنوان").error(() => {
       return {
         message: 'خطأ',
       };
@@ -48,9 +48,15 @@ class AddUser extends Form {
       const { userType } = this.state;
       userService.registerUser(data, userType);
       this.props.history.replace("/add-product");
-    } catch (e) {
-      const { data } = e.response;
-      console.log(data.errors);
+    }catch (ex) {
+      const { data } = ex.response;
+      const errors = data.errors;
+      const err = {};
+      for (const error in errors) {
+        err[error] = errors[error][0];
+      }
+      this.setState({ errors: err });
+
     }
   };
 
