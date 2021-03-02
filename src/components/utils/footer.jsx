@@ -10,23 +10,22 @@ const Footer = () => {
       <div className="container text-center text-md-left">
         <div className="row">
           <div className="col-md-4 mx-auto">
-            <h5 className="font-weight-bold text-uppercase mt-3 mb-4">
-              Visitor
+            <h5 className="font-weight-bold text-uppercase mt-3 mb-4 middleSection-Standardfont">
+              عزيزي المستخدم
             </h5>
-            <h6>
-            قم بتسجيل الدخول إلى موقعنا,حتى تتيح لنفسك العديد من خدمات الإعلان والتسويق الإلكتروني لمحتوى متخصص بالخدمات ومختلف المجالات التي تتعلّق بالبحث عن وظائف وبيع وشراء السلع والمنتجات كافة بالتواصل المباشر مع الفئات المستهدفة عن طريق رسائل الدردشة والاتصال الهاتفي والتعليقات.
+            <h6 className="middleSection-Standardfont">
+            قم بتسجيل الدخول إلى موقعنا,حتى تتيح لنفسك العديد من خدمات الإعلان والتسويق الإلكتروني لمحتوى متخصص بالخدمات ومختلف المجالات التي تتعلّق بالبحث عن وظائف وبيع وشراء السلع والمنتجات الكافة بالتواصل المباشر مع الفئات المستهدفة عن طريق رسائل الدردشة والاتصال الهاتفي .
             </h6>
           </div>
 
           <hr className="clearfix w-100 d-md-none" />
 
           <div className="col-md-4 mx-auto">
-            <h5 className="font-weight-bold text-uppercase mt-3 mb-4">
-              Business User
+            <h5 className="font-weight-bold text-uppercase mt-3 mb-4 middleSection-Standardfont">
+            طموحاتنا المستقبلية 
             </h5>
-            <h6>
-            في موقعنا يمكنك إدارة بطاقة العمل الخاصة بك ، كما يمكنك مشاركة بطاقتك مع الآخرين ، وفتح حساب جديد كعمل تجاري والبدء ، يمكنك إضافة وتحرير وإرسال بطاقاتك للمستخدمين الآخرين مما يفتح لك مجال للبيع اكبر
-
+            <h6 className="middleSection-Standardfont"> 
+            في موقعنا يمكنك إدارة حانوتك الخاصة بك ، كما يمكنك مشاركة موقعك الإلكتروني مع الآخرين ، وفتح حساب جديد كعمل تجاري والبدء ، يمكنك إضافة وتحرير وإرسال بطاقاتك للمستخدمين الآخرين مما يفتح لك مجال للبيع اكبر
             </h6>
           </div>
 
@@ -35,20 +34,7 @@ const Footer = () => {
       </div>
 
       <hr />
-
-      <ul className="list-unstyled list-inline text-center py-2">
-        <li className="list-inline-item">
-          <h5 className="mb-1">Register for free</h5>
-        </li>
-        <li className="list-inline-item">
-          <Link to="/signup" className="btn btn-danger btn-rounded">
-            Sign up!
-          </Link>
-        </li>
-      </ul>
-
-      <hr />
-
+      
       <ul className="list-unstyled list-inline text-center">
         <li className="list-inline-item">
           <Link to="#" className="btn-floating btn-fb mx-1">
