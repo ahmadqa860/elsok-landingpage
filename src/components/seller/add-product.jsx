@@ -65,21 +65,38 @@ class AddNewProduct extends Form{
         var { data } = this.state;
         
         var bodyFormData = new FormData();
-        for(const uploadImage of data.uploadImage){
-            bodyFormData.append('uploadImages[]',uploadImage);
-        }
+        if(data.uploadImage != null){
+            for(const uploadImage of data.uploadImage){
+                bodyFormData.append('uploadImages[]',uploadImage);
+            }
+        
         
         bodyFormData.append('categorie_id',data.categorie_id);
         bodyFormData.append('product_title',data.product_title);
         bodyFormData.append('product_description',data.product_description);
         bodyFormData.append('product_price',data.product_price);
         
-        bodyFormData.forEach(elem=>console.log(elem));    
-        console.log(bodyFormData);
-        //console.log(data.uploadImage);
-        await http.post(`${apiUrl}/seller-products`,bodyFormData);
-        //this.props.history.replace("/thank-you");
-       
+        bodyFormData.forEach(elem=>{
+            console.log(elem)
+        });
+        
+        try{
+            await http.post(`${apiUrl}/seller-products`,bodyFormData);
+            this.props.history.replace("/thank-you");
+
+        }catch (ex) {
+            const { data } = ex.response;
+            const errors = data.errors;
+            const err = {};
+            for (const error in errors) {
+              err[error] = errors[error][0];
+            }
+            this.setState({ errors: err });
+        }
+        }
+        else{
+            alert("خطأ في ادخال الصور");
+        }
     }
 
     handleFileSelected=(event)=>{
@@ -112,9 +129,9 @@ class AddNewProduct extends Form{
                             </select>
                             
                             {this.renderInput("product_title", "عنوان المنتج")}
-                            {this.renderInput("product_description", "شرح وتفصيل عن المنتج")}
+                            {this.renderTextarea("product_description", "شرح وتفصيل عن المنتج")}
                             {this.renderInput("product_price", "السعر")}
-                            <input  name="file" type="file" onChange={this.handleFileSelected} multiple/>
+                            {this.renderInputFile("file","الصور")}
                             {this.renderButton("أنتهاء")} 
                         </form>
                 
