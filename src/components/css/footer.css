@@ -1,18 +1,17 @@
-.footerBgColor{
-  background: #DB881C;
+.footerBgColor {
+  background: #db881c;
 }
 
-.form-group label{
+.form-group label {
   color: #d78520;
   font-size: 1.3rem;
-  font-family: 'Markazi Text', serif;
+  font-family: "Markazi Text", serif;
 }
 
-.btn{
-  font-family: 'Markazi Text', serif;
+.btn {
+  font-family: "Markazi Text", serif;
   font-size: 1.5rem !important;
 }
-
 
 .wrapper {
   background: #d78520;
@@ -20,22 +19,21 @@
     linear,
     left top,
     right bottom,
-    from(#DB881C),
+    from(#db881c),
     to(#1416bd)
   );
-  background: linear-gradient(to bottom right, #0A23C3 0%, #DB881C 100%);
+  background: linear-gradient(to bottom right, #0a23c3 0%, #db881c 100%);
   position: relative;
-  
+
   left: 0;
   width: 100%;
   height: auto;
   overflow: hidden;
-  
 }
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
   transform: translateY(85px);
 }
-
-
-
+.list-inline-item {
+  color: rgb(255, 0, 0);
+}

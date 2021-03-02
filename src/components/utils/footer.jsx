@@ -14,8 +14,7 @@ const Footer = () => {
               Visitor
             </h5>
             <h6>
-              Sign in to our site and get all the Business Cards that you need,
-              our service is to connect you for all your needs
+            قم بتسجيل الدخول إلى موقعنا,حتى تتيح لنفسك العديد من خدمات الإعلان والتسويق الإلكتروني لمحتوى متخصص بالخدمات ومختلف المجالات التي تتعلّق بالبحث عن وظائف وبيع وشراء السلع والمنتجات كافة بالتواصل المباشر مع الفئات المستهدفة عن طريق رسائل الدردشة والاتصال الهاتفي والتعليقات.
             </h6>
           </div>
 
@@ -26,9 +25,8 @@ const Footer = () => {
               Business User
             </h5>
             <h6>
-              In our site you can manage your Business Card, also you can share
-              your card with others, Open a new account as business and start,
-              you can add, edit, and send your cards for other users
+            في موقعنا يمكنك إدارة بطاقة العمل الخاصة بك ، كما يمكنك مشاركة بطاقتك مع الآخرين ، وفتح حساب جديد كعمل تجاري والبدء ، يمكنك إضافة وتحرير وإرسال بطاقاتك للمستخدمين الآخرين مما يفتح لك مجال للبيع اكبر
+
             </h6>
           </div>
 

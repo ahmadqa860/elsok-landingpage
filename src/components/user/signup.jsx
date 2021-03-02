@@ -63,7 +63,7 @@ class Signup extends Form {
         
       <div className="wrapper rounded">
           <div className="Lcontainer">
-          <PageHeader titleText="Welcome To Our Card Web App" />
+          <PageHeader titleText="Welcome To Our Card App" />
             <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST">
               {this.renderInput("email", "عنوان البريد الالكتروني:", "email")}
               {this.renderInput("password", "ادخل كلمة المرور:", "password")}
