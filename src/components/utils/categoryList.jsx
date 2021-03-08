@@ -1,10 +1,10 @@
 import React from "react";
 import img1 from "../../img/arr3.jpg";
-import img2 from "../../img/pexels-pixabay-164634.jpg";
-import img3 from "../../img/phone.jpg";
-import img4 from "../../img/Real Estate.jpg";
-import img5 from "../../img/sport.jpg";
-import img6 from "../../img/Untitled-3.jpg";
+import img2 from "../../img/Untitled-3.jpg";
+import img3 from "../../img/pc.jpg";
+import img4 from "../../img/Untitled-1.jpg";
+import img5 from "../../img/rael.jpg";
+import img6 from "../../img/sport.jpg";
 
 
 const CategoryList = () => {
@@ -27,28 +27,28 @@ const CategoryList = () => {
                             </div></a>
                     </div>
                     <div className="col-lg-4 col-sm-6">
-                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg"><img className="img-fluid" src={img1} alt=""/>
+                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg"><img className="img-fluid" src={img3} alt=""/>
                             <div className="portfolio-box-caption">
                                 <div className="project-category text-white-50  middleSection-Standardfont ">الكمبيوتر ومستلزماته</div>
                                 <div className="project-name middleSection-Standardfont ">لبتوب,بي سي ,شاشات ,سماعات, طابعه,كاميرات</div>
                             </div></a>
                     </div>
                     <div className="col-lg-4 col-sm-6">
-                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg"><img className="img-fluid" src={img2} alt=""/>
+                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg"><img className="img-fluid" src={img4} alt=""/>
                             <div className="portfolio-box-caption">
                                 <div className="project-category text-white-50 middleSection-Standardfont">الموضة</div>
                                 <div className="project-name middleSection-Standardfont">ملابس نسائيه و رجاليه ,احذيه ,فساتين ,بدل ,اكسسوارات</div>
                             </div></a>
                     </div>
                     <div className="col-lg-4 col-sm-6">
-                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg"><img className="img-fluid" src={img2} alt=""/>
+                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg"><img className="img-fluid" src={img5} alt=""/>
                             <div className="portfolio-box-caption">
                                 <div className="project-category text-white-50 middleSection-Standardfont">عقارات</div>
                                 <div className="project-name middleSection-Standardfont">منازل , اراضي ,عقارات للأيجار,</div>
                             </div></a>
                     </div>
                     <div className="col-lg-4 col-sm-6">
-                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg"><img className="img-fluid" src={img2} alt=""/>
+                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg"><img className="img-fluid" src={img6} alt=""/>
                             <div className="portfolio-box-caption p-3">
                                 <div className="project-category text-white-50 middleSection-Standardfont">رياضة</div>
                                 <div className="project-name middleSection-Standardfont">اجهزة رياضه ومستلزماته</div>
