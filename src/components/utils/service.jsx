@@ -4,7 +4,7 @@ const Service = () => {
   return (
     <section className="page-section" id="services">
             <div className="container">
-                <h2 className="text-center mt-0">At Your Service</h2>
+                <h2 className="text-center text-orange mt-0 Lemonada-font">في خدمتكم دائما!</h2>
                 <hr className="divider my-4"/>
                 <div className="row">
                     <div className="col-lg-3 col-md-6 text-center">

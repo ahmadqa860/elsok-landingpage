@@ -514,8 +514,8 @@ mark,
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  width: 635px;
+  height: 475px;
 }
 
 .img-thumbnail {
@@ -10591,7 +10591,7 @@ header.masthead h1 {
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: rgba(203, 128, 42, 0.5);
+  background: rgba(7, 17, 161, 0.5);
   transition: opacity 0.25s ease;
   text-align: center;
 }
@@ -10644,6 +10644,14 @@ header.masthead h1 {
 
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75);
+}
+
+.text-orange{
+  color: #F4623A;
+}
+
+.text-blue{
+  color: #0A23C3;
 }
 
 .Lemonada-font {

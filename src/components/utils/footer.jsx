@@ -38,32 +38,13 @@ const Footer = () => {
       <ul className="list-unstyled list-inline text-center">
         <li className="list-inline-item">
           <Link to="#" className="btn-floating btn-fb mx-1">
-            <i className="fab fa-facebook-f"> </i>
-          </Link>
-        </li>
-        <li className="list-inline-item">
-          <Link to="#" className="btn-floating btn-tw mx-1">
-            <i className="fab fa-twitter"> </i>
-          </Link>
-        </li>
-        <li className="list-inline-item">
-          <Link to="#" className="btn-floating btn-gplus mx-1">
-            <i className="fab fa-google-plus-g"> </i>
-          </Link>
-        </li>
-        <li className="list-inline-item">
-          <Link to="#" className="btn-floating btn-li mx-1">
-            <i className="fab fa-linkedin-in"> </i>
-          </Link>
-        </li>
-        <li className="list-inline-item">
-          <Link to="#" className="btn-floating btn-dribbble mx-1">
-            <i className="fab fa-dribbble"> </i>
+        
+            <i className="fab fa-facebook-f"></i>
           </Link>
         </li>
       </ul>
 
-      <div className="footer-copyright text-center py-3">© 2020 Copyright:</div>
+      <div className="footer-copyright text-center py-3 middleSection-Standardfont" >جميع الحقوق محفوظة لموقع السوق © 2021 </div>
     </footer>
     </React.Fragment>
   );

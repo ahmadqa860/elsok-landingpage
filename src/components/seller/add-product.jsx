@@ -113,7 +113,7 @@ class AddNewProduct extends Form{
             <section >
                 <div className="wrapper rounded">
                     <div className="Lcontainer">
-                        <PageHeader titleText="Welcome To Our Card Web App" />
+                        <PageHeader titleText="أضف منتوجك الى حسابك" />
                         <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST" encType="multipart/form-data">
                             <select
                                 name="categorie_id"

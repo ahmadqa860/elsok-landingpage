@@ -13,14 +13,14 @@ const CategoryList = () => {
             <div className="container-fluid p-0">
                 <div className="row no-gutters">
                     <div className="col-lg-4 col-sm-6">
-                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg"><img className="img-fluid" src={img2} alt=""/>
+                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg"><img className="img-fluid" src={img1} alt=""/>
                             <div className="portfolio-box-caption">
                                 <div className="project-category text-white-50 middleSection-Standardfont">سيارات</div>
                                 <div className="project-name middleSection-Standardfont">مركبات ,قطع غيار,</div>
                             </div></a>
                     </div>
                     <div className="col-lg-4 col-sm-6">
-                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg"><img className="img-fluid" src={img6} alt=""/>
+                        <a className="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg"><img className="img-fluid" src={img2} alt=""/>
                             <div className="portfolio-box-caption">
                                 <div className="project-category text-white-50 middleSection-Standardfont">الالكترونيات</div>
                                 <div className="project-name middleSection-Standardfont">هواتف, تابلت,اكسسوارات ,باور بانك</div>

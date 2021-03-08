@@ -66,7 +66,7 @@ class AddUser extends Form {
       <section id="addUser">
                 <div className="wrapper rounded">
                     <div className="Lcontainer">
-                    <PageHeader titleText="Welcome To Our Card Web App" />
+                    <PageHeader titleText="أدخل معلوماتك الخاصة" />
                       <form method="POST" className="Lform" onSubmit={this.handleSubmit} autoComplete="off">
                         {this.renderInput("identity", "رقم الهوية")}
                         {this.renderInput("name", "الأسم الكامل")}

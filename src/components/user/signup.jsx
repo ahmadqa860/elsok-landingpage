@@ -1,9 +1,6 @@
 import React from "react";
 import Joi from "joi-browser";
-//import { apiUrl } from "../config.json";
 import userService from "../../services/userService";
-//import http from "../services/httpService";
-
 
 import Form from "../common/form";
 import PageHeader from "../utils/pageHeader";
@@ -62,7 +59,7 @@ class Signup extends Form {
         
       <div className="wrapper rounded">
           <div className="Lcontainer">
-          <PageHeader titleText="Welcome To Our Card App" />
+          <PageHeader titleText="قم بتسجيل حسابك الخاص" />
             <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST">
               {this.renderInput("email", "عنوان البريد الالكتروني:", "email")}
               {this.renderInput("password", "ادخل كلمة المرور:", "password")}
