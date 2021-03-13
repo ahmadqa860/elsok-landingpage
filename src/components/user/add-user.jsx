@@ -22,17 +22,17 @@ class AddUser extends Form {
     }),
     name: Joi.string().required().label("الاسم").error(() => {
       return {
-        message: 'خطأ',
+        message: 'عليك ادخال الأسم',
       };
     }),
     mobile: Joi.number().required().label("الهاتف").error(() => {
       return {
-        message: 'خطأ',
+        message: 'أدخل رقم الهاتف مكون من ارقام',
       };
     }),
     address: Joi.string().required().label("العنوان").error(() => {
       return {
-        message: 'خطأ',
+        message: 'عليك ادخال العنوان',
       };
     }),
   };

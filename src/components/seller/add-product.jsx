@@ -29,27 +29,27 @@ class AddNewProduct extends Form{
     schema={
         categorie_id: Joi.required().label("Category").error(() => {
             return {
-              message: 'خطأ',
+              message: 'عليك أختيار التصنيف',
             };
           }),
         product_title: Joi.string().required().label("Title").error(() => {
             return {
-              message: 'خطأ',
+              message: 'أدخل العنوان',
             };
           }),
         product_description: Joi.string().required().label("Description").error(() => {
             return {
-              message: 'خطأ',
+              message: 'أكتب وصف المنتج',
             };
           }),
         product_price: Joi.string().required().label("Price").error(() => {
             return {
-              message: 'خطأ',
+              message: 'ضع السعر المناسب',
             };
           }),
         uploadImage:Joi.required().label("uploadImage").error(() => {
             return {
-              message: 'خطأ',
+              message: 'عليك تحميل الصور',
             };
           }), 
     };

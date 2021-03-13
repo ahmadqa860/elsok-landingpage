@@ -514,7 +514,7 @@ mark,
 }
 
 .img-fluid {
-  width: 635px;
+  max-width: 630px;
   height: 475px;
 }
 

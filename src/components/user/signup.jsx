@@ -14,12 +14,12 @@ class Signup extends Form {
   schema = {
     email: Joi.string().required().email().label("Email").error(() => {
       return {
-        message: 'خطأ',
+        message: 'خطأ في ادخال البريد الالكتروني',
       };
     }),
     password: Joi.string().required().min(6).label("Password").error(() => {
       return {
-        message: 'خطأ',
+        message: 'خطأ في ادخال كلمة السر',
       };
     }),
     password_confirmation: Joi.string()
@@ -27,7 +27,7 @@ class Signup extends Form {
       .min(6)
       .label("confirm password").error(() => {
         return {
-          message: 'خطأ',
+          message: 'اعد كتابة كلمة السر',
         };
       }),
   };
