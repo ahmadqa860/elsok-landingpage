@@ -5,6 +5,7 @@ import http from "../../services/httpService";
 import {apiUrl} from "../../config.json";
 
 import PageHeader from "../utils/pageHeader";
+import LoadingPage from "../utils/loadingPage";
 
 
 class AddNewProduct extends Form{
@@ -19,6 +20,7 @@ class AddNewProduct extends Form{
         },
         errors:{},
         categories:[],
+        loading: false,
     };
 
     async componentDidMount(){
@@ -63,6 +65,9 @@ class AddNewProduct extends Form{
 
     doSubmit = async () => {
         var { data } = this.state;
+        let { loading } = this.state;
+        loading = true;
+        this.setState({loading});
         
         var bodyFormData = new FormData();
         if(data.uploadImage != null){
@@ -76,14 +81,9 @@ class AddNewProduct extends Form{
         bodyFormData.append('product_description',data.product_description);
         bodyFormData.append('product_price',data.product_price);
         
-        bodyFormData.forEach(elem=>{
-            console.log(elem)
-        });
-        
         try{
             await http.post(`${apiUrl}/seller-products`,bodyFormData);
             this.props.history.replace("/thank-you");
-
         }catch (ex) {
             const { data } = ex.response;
             const errors = data.errors;
@@ -108,12 +108,13 @@ class AddNewProduct extends Form{
 
     render(){
         const {categories} = this.state;
-
+        const {loading} = this.state;
         return (
             <section >
                 <div className="wrapper rounded">
                     <div className="Lcontainer">
                         <PageHeader titleText="أضف منتوجك الى حسابك" />
+                        {!loading && (
                         <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST" encType="multipart/form-data">
                             <select
                                 name="categorie_id"
@@ -134,6 +135,9 @@ class AddNewProduct extends Form{
                             {this.renderInputFile("file","الصور")}
                             {this.renderButton("أنتهاء")} 
                         </form>
+                        )};
+
+                        {loading && (<LoadingPage/>)}
                 
                     <ul className="bg-bubbles">
                         <li></li>
