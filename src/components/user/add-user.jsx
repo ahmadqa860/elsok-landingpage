@@ -2,16 +2,17 @@ import React from "react";
 import Joi from "joi-browser";
 import userService from "../../services/userService";
 
-
 import Form from "../common/form";
 import PageHeader from "../utils/pageHeader";
+import LoadingPage from "../utils/loadingPage";
 
 
 class AddUser extends Form {
   state = {
     data: { identity: "", name: "", mobile: "", address: "" },
-    userType: "",
+    userType: "3",
     errors: {},
+    loading: false,
   };
 
   schema = {
@@ -22,17 +23,17 @@ class AddUser extends Form {
     }),
     name: Joi.string().required().label("الاسم").error(() => {
       return {
-        message: 'خطأ',
+        message: 'عليك ادخال الأسم',
       };
     }),
     mobile: Joi.number().required().label("الهاتف").error(() => {
       return {
-        message: 'خطأ',
+        message: 'أدخل رقم الهاتف مكون من ارقام',
       };
     }),
     address: Joi.string().required().label("العنوان").error(() => {
       return {
-        message: 'خطأ',
+        message: 'عليك ادخال العنوان',
       };
     }),
   };
@@ -44,10 +45,14 @@ class AddUser extends Form {
 
   doSubmit = async () => {
     try {
+      let { loading } = this.state;
       const { data } = this.state;
       const { userType } = this.state;
+      loading = true;
+      this.setState({loading});
       userService.registerUser(data, userType);
-      this.props.history.replace("/add-product");
+      this.props.history.replace("/add-product")
+      
     }catch (ex) {
       const { data } = ex.response;
       const errors = data.errors;
@@ -61,12 +66,14 @@ class AddUser extends Form {
   };
 
   render() {
+    const {loading} = this.state;
     return (
 
       <section id="addUser">
                 <div className="wrapper rounded">
                     <div className="Lcontainer">
-                    <PageHeader titleText="Welcome To Our Card Web App" />
+                    <PageHeader titleText="أدخل معلوماتك الخاصة" />
+                    {!loading && (
                       <form method="POST" className="Lform" onSubmit={this.handleSubmit} autoComplete="off">
                         {this.renderInput("identity", "رقم الهوية")}
                         {this.renderInput("name", "الأسم الكامل")}
@@ -74,6 +81,9 @@ class AddUser extends Form {
                         {this.renderInput("address", "العنوان")}
                         {this.renderButton("أكمل")}
                       </form>
+                    )}
+
+                    {loading && (<LoadingPage/>)}
                       <ul className="bg-bubbles">
                                   <li></li>
                                   <li></li>

@@ -15,6 +15,8 @@ import MiddleSection from "./components/utils/middleSection";
 import Service from "./components/utils/service";
 import CategoryList from "./components/utils/categoryList";
 
+import "./components/js/script";
+
 class App extends Component {
   
   render(){
