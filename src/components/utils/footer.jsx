@@ -41,13 +41,20 @@ const Footer = () => {
                 <i className="fab fa-facebook-f"></i>
            يمكنك التواصل معنا في صفحتنا على الفيسبوك او البريد الالكتروني 
         </a>
-        </li>
-        <li className="list-inline-item">
-        elsok.group@gmail.com
-        </li>
+     </li>
       </ul>
 
       <div className="footer-copyright text-center py-3 middleSection-Standardfont" >جميع الحقوق محفوظة لموقع السوق © 2021 </div>
+      <ul className="list-unstyled list-inline text-center">
+        <li className="list-inline-item">
+          <Link to="elsok.group@gmail.com" className="btn-floating btn-fb mx-1">
+               elsok.group@gmail.com          
+
+
+          <i class="fas fa-envelope-open"></i>
+        </Link>
+        </li>
+      </ul>
     </footer>
     </React.Fragment>
   );
