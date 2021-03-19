@@ -1,9 +1,9 @@
 import React from "react";
 import img1 from "../../img/cars.jpg";
-import img2 from "../../img/Untitled-3.jpg";
+import img2 from "../../img/electronics.jpg";
 import img3 from "../../img/pc.jpg";
 import img4 from "../../img/fashion.jpg";
-import img5 from "../../img/rael.jpg";
+import img5 from "../../img/buildings.jpg";
 import img6 from "../../img/sport.jpg";
 
 

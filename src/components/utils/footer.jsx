@@ -38,9 +38,10 @@ const Footer = () => {
       <ul className="list-unstyled list-inline text-center">
         <li className="list-inline-item">
           <Link to="#" className="btn-floating btn-fb mx-1">
-            <i className="fab fa-facebook-f"></i>
-          </Link>
+          
           يمكنك التواصل معنا في صفحتنا على الفيسبوك او البريد الالكتروني 
+                <i className="fab fa-facebook-f"></i>
+        </Link>
         </li>
       </ul>
 
