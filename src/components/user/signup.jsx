@@ -4,11 +4,13 @@ import userService from "../../services/userService";
 
 import Form from "../common/form";
 import PageHeader from "../utils/pageHeader";
+import LoadingPage from "../utils/loadingPage";
 
 class Signup extends Form {
   state = {
     data: { email: "", password: "", password_confirmation: "" },
     errors: {},
+    loading: false,
   };
 
   schema = {
@@ -34,11 +36,12 @@ class Signup extends Form {
 
   doSubmit = async () => {
     const { data } = this.state;
-    
+    let { loading } = this.state;
+    loading = true;
     try {
+      this.setState({loading});
       await userService.register(data);
       window.location = "/add-user#addUser";
-     
     } catch (ex) {
       const { data } = ex.response;
       const errors = data.errors;
@@ -48,18 +51,19 @@ class Signup extends Form {
       }
       this.setState({ errors: err });
 
-      
     }
   };
 
   render() {
+    const {loading} = this.state;
     return (
       
       <section id="signup">
         
       <div className="wrapper rounded">
           <div className="Lcontainer">
-          <PageHeader titleText="قم بتسجيل حسابك الخاص" />
+            <PageHeader titleText="قم بتسجيل حسابك الخاص" />
+            {!loading && (
             <form className="Lform" onSubmit={this.handleSubmit} autoComplete="off" method="POST">
               {this.renderInput("email", "عنوان البريد الالكتروني:", "email")}
               {this.renderInput("password", "ادخل كلمة المرور:", "password")}
@@ -70,6 +74,11 @@ class Signup extends Form {
               )}
               {this.renderButton("تسجيل")}
             </form>
+            )}
+
+            {loading && (<LoadingPage/>)}
+
+
             <ul className="bg-bubbles">
                                   <li></li>
                                   <li></li>
