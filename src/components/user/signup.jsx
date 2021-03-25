@@ -43,6 +43,8 @@ class Signup extends Form {
       await userService.register(data);
       window.location = "/add-user#addUser";
     } catch (ex) {
+      loading = false;
+      this.setState({loading});
       const { data } = ex.response;
       const errors = data.errors;
       const err = {};
