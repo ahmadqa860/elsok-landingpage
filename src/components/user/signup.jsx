@@ -58,8 +58,14 @@ class Signup extends Form {
 
   render() {
     const {loading} = this.state;
+
+    const infoNote = {
+      color: "white",
+      padding: "10px",
+      fontFamily: "Arial"
+    };
+
     return (
-      
       <section id="signup">
         
       <div className="wrapper rounded">
@@ -75,6 +81,11 @@ class Signup extends Form {
                 "password"
               )}
               {this.renderButton("تسجيل")}
+
+              <div className="mt-4 middleSection-Standardfont" style={infoNote}>
+                <p><strong className="pl-3">ملاحظة هامة!</strong>لو تم تسجيلك في الموقع من قبل فيمكنك الضغط على أضف منتج جديد في أعلى الصفحة </p>
+                <p>او اضغط هنا <a href="/add-product#addProduct">أضف منتج جديد</a></p>
+              </div>
             </form>
             )}
 

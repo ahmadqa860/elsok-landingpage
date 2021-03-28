@@ -2,7 +2,7 @@ import React from "react";
 
 const middleSection = () => {
   return (
-    <section className="page-section bg-primary" id="entry">
+    <section className="page-section bg-primary pd-70-bot-top" id="entry">
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-8 text-center">

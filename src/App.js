@@ -18,13 +18,13 @@ import CategoryList from "./components/utils/categoryList";
 import "./components/js/script";
 
 class App extends Component {
+
   
   render(){
-
     const history = createBrowserHistory();
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar/>
         <Header />
         <MiddleSection />
         <Service />

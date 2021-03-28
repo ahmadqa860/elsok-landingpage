@@ -514,8 +514,8 @@ mark,
 }
 
 .img-fluid {
-  max-width: 630px;
-  height: 475px;
+  max-width: 100%;
+  height: auto;
 }
 
 .img-thumbnail {
@@ -648,6 +648,12 @@ pre code {
   .container {
     max-width: 1140px;
   }
+
+  .img-fluid {
+    max-width: 630px;
+    height: 475px;
+  }
+
 }
 .row {
   display: flex;
@@ -10452,8 +10458,9 @@ hr.light {
   border-radius: 10rem;
 }
 
-.page-section {
-  padding: 70px;
+.pd-70-bot-top {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 #mainNav {

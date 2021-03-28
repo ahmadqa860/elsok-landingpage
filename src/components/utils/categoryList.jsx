@@ -9,7 +9,8 @@ import img6 from "../../img/sport.jpg";
 
 const CategoryList = () => {
   return (
-    <div id="portfolio" >
+    <section className="page-section" id="portfolio">
+    
             <div className="container-fluid p-0">
                 <div className="row no-gutters">
                     <div className="col-lg-4 col-sm-6">
@@ -56,7 +57,8 @@ const CategoryList = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        
+    </section>
   );
 };
 

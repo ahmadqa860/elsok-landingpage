@@ -50,7 +50,7 @@ class AddUser extends Form {
       const { userType } = this.state;
       loading = true;
       this.setState({loading});
-      userService.registerUser(data, userType);
+      await userService.registerUser(data, userType);
       this.props.history.replace("/add-product")
       
     }catch (ex) {

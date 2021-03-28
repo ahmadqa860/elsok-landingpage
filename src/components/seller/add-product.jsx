@@ -44,7 +44,7 @@ class AddNewProduct extends Form{
               message: 'أكتب وصف المنتج',
             };
           }),
-        product_price: Joi.string().required().label("Price").error(() => {
+        product_price: Joi.number().required().label("Price").error(() => {
             return {
               message: 'ضع السعر المناسب',
             };
@@ -92,10 +92,15 @@ class AddNewProduct extends Form{
               err[error] = errors[error][0];
             }
             this.setState({ errors: err });
+            loading = false;
+            this.setState({loading});
+            alert("خطأ في ادخال المعلومات !");
         }
         }
         else{
             alert("خطأ في ادخال الصور");
+            loading = false;
+            this.setState({loading});
         }
     }
 
@@ -110,7 +115,7 @@ class AddNewProduct extends Form{
         const {categories} = this.state;
         const {loading} = this.state;
         return (
-            <section >
+            <section id="addProduct">
                 <div className="wrapper rounded">
                     <div className="Lcontainer">
                         <PageHeader titleText="أضف منتوجك الى حسابك" />
@@ -135,7 +140,7 @@ class AddNewProduct extends Form{
                             {this.renderInputFile("file","الصور")}
                             {this.renderButton("أنتهاء")} 
                         </form>
-                        )};
+                        )}
 
                         {loading && (<LoadingPage/>)}
                 

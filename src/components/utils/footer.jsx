@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <React.Fragment>
       
-    <footer className="page-footer font-small stylish-color-dark page-section footerBgColor">
+    <footer className="page-footer font-small stylish-color-dark page-section footerBgColor pd-70-bot-top">
       <div className="container text-center text-md-left">
         <div className="row">
           <div className="col-md-4 mx-auto">
@@ -51,7 +51,7 @@ const Footer = () => {
                elsok.group@gmail.com          
 
 
-          <i class="fas fa-envelope-open"></i>
+          <i className="fas fa-envelope-open"></i>
         </a>
         </li>
       </ul>
