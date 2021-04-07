@@ -25,13 +25,14 @@ export async function register({ email, password, password_confirmation }) {
 }
 
 export async function registerUser(
-  { identity, name, mobile, address },
+  { identity=null, name, mobile, address, city_id },
   userType
 ) {
   await http.post(`${apiUrl}/user/profile`, {
     identity: identity,
     name,
     mobile,
+    city_id,
     address,
     userType,
   });

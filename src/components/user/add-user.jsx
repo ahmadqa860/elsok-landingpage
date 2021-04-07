@@ -1,6 +1,8 @@
 import React from "react";
 import Joi from "joi-browser";
 import userService from "../../services/userService";
+import {apiUrl} from "../../config.json";
+import http from "../../services/httpService";
 
 import Form from "../common/form";
 import PageHeader from "../utils/pageHeader";
@@ -8,17 +10,24 @@ import LoadingPage from "../utils/loadingPage";
 
 
 class AddUser extends Form {
+  
   state = {
-    data: { identity: "", name: "", mobile: "", address: "" },
+    data: { name: "", mobile: "", address: "", city_id: "" },
     userType: "3",
+    cities: [],
     errors: {},
     loading: false,
   };
+  
+  async componentDidMount(){
+    const {data}  = await http.get(`${apiUrl}/cities`);
+    this.setState({cities:data});
+  }
 
   schema = {
-    identity: Joi.number().label("رقم الهوية").error(() => {
+    city_id: Joi.required().label("المدينة").error(() => {
       return {
-        message: 'أدخل رقم صحيح',
+        message: 'عليك أختيار التصنيف',
       };
     }),
     name: Joi.string().required().label("الاسم").error(() => {
@@ -39,8 +48,10 @@ class AddUser extends Form {
   };
 
   handleSelect = (event) => {
-    let userType = event.target.value;
-    this.setState({ userType });
+    const {data} = this.state;
+    data.city_id = event.target.value;
+    console.log(data);
+    this.setState({ data });
   };
 
   doSubmit = async () => {
@@ -48,6 +59,7 @@ class AddUser extends Form {
       let { loading } = this.state;
       const { data } = this.state;
       const { userType } = this.state;
+      console.log(data);
       loading = true;
       this.setState({loading});
       await userService.registerUser(data, userType);
@@ -67,6 +79,7 @@ class AddUser extends Form {
 
   render() {
     const {loading} = this.state;
+    const {cities} = this.state;
     return (
 
       <section id="addUser">
@@ -75,9 +88,22 @@ class AddUser extends Form {
                     <PageHeader titleText="أدخل معلوماتك الخاصة" />
                     {!loading && (
                       <form method="POST" className="Lform" onSubmit={this.handleSubmit} autoComplete="off">
-                        {this.renderInput("identity", "رقم الهوية")}
                         {this.renderInput("name", "الأسم الكامل")}
                         {this.renderInput("mobile", "رقم الهاتف")}
+                        <div className="form-group">
+                          <label>أختار البلد</label>
+                          <select
+                            name="categorie_id"
+                            id="categorie_id"
+                            className="custom-select"
+                            onChange={this.handleSelect}
+                          >
+                            <option defaultValue="">أختار التصنيف</option> 
+                              {cities.map((city)=>(
+                                <option key={city.id} value={city._id}>{city.arb_name}</option> 
+                              ))} 
+                          </select>
+                        </div>
                         {this.renderInput("address", "العنوان")}
                         {this.renderButton("أكمل")}
                       </form>
